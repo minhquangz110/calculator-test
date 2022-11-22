@@ -1,0 +1,164 @@
+$itemValueColor: #f4c1a4;
+$itemOperatorColor: #7fabd0;
+$backgroundColor: #171c20;
+$backgroundContainerColor: #010101;
+@import "../../styles/stylesCommon.scss";
+.calculator-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: $backgroundColor;
+  padding: 20px 0;
+  box-sizing: border-box;
+
+  .btn:hover {
+    opacity: 0.8;
+  }
+  .btn {
+    cursor: pointer;
+    border: none;
+  }
+  .container {
+    border-radius: 16px;
+    min-width: 350px;
+    width: 350px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background-color: $backgroundContainerColor;
+    height: 100%;
+    padding: 0px 12px;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .history-container {
+    // animation: fadeOutAnimation ease .2s;
+
+    width: 74%;
+    border-right: 1px solid #f4c1a43a;
+    left: 0;
+    bottom: 0;
+    height: 100%;
+
+    display: flex;
+    position: absolute;
+    z-index: 10;
+    background-color: $backgroundContainerColor;
+    flex-direction: column;
+    align-items: center;
+    padding: 10px 24px;
+    box-sizing: border-box;
+    color: white;
+    .history-content-container {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      width: 100%;
+      height: 100px;
+      position: relative;
+      overflow: hidden;
+
+      justify-content: flex-end;
+      .history-content {
+        display: flex;
+        margin-bottom: 24px;
+        flex-direction: column;
+        .history-display {
+          justify-content: flex-end;
+          display: flex;
+          font-size: 14;
+          margin-bottom: 8px;
+          color: #f4c1a4;
+        }
+        .history-result {
+          justify-content: flex-end;
+          display: flex;
+          font-size: 20px;
+          color: $itemOperatorColor;
+        }
+      }
+    }
+    .btn-clear-history {
+      width: 75%;
+      background-color: #1a1a1a;
+      color: white;
+      padding: 8px;
+      border-radius: 20px;
+    }
+  }
+
+  .item {
+    cursor: pointer;
+    font-family: arial, sans-serif;
+    text-align: center;
+    line-height: 34px;
+    margin: 2px 4px;
+    border: none;
+    position: relative;
+    border-radius: 50%;
+    background-color: $backgroundColor;
+    width: 78px;
+    height: 78px;
+    font-size: 34px;
+  }
+  .value {
+    color: $itemValueColor;
+  }
+  .operator {
+    color: $itemOperatorColor;
+  }
+
+  .result {
+    flex: 1;
+    border-bottom: 0.5px solid #f4c1a43a;
+    display: flex;
+    flex-direction: column;
+    padding: 0 12px;
+    padding-top: 20px;
+    .display {
+      display: flex;
+      justify-content: flex-end;
+      font-size: 42px;
+      overflow: hidden;
+      width: 100%;
+      margin-bottom: 30px;
+      white-space: nowrap;
+      transition: all .3s;
+
+    }
+    .display-current {
+      color: $itemValueColor;
+      flex: 1;
+    }
+    .display-result {
+      font-size: 28px;
+      color: $itemValueColor;
+      opacity: 0.6;
+    }
+    .toolkit-container {
+      padding: 18px 8px;
+      box-sizing: border-box;
+      display: flex;
+      height: 60px;
+      justify-content: space-between;
+      .toolkit {
+        border: none;
+        background-color: $backgroundContainerColor;
+        cursor: pointer;
+        font-size: 22px;
+      }
+      .btn-history {
+        color: $itemValueColor;
+      }
+      .btn-back-space {
+        color: $itemOperatorColor;
+      }
+    }
+  }
+  .keyboard {
+    position: relative;
+    margin: 15px 0px;
+  }
+}
